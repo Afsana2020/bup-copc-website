@@ -25,3 +25,7 @@ This is the official web presence for BUP CoPC, showcasing our events, executive
 - About
 - Join CoPC
 ---
+
+## Contact
+- Club: bupcsclub@gmail.com
+- Developer: afsanahena24@gmail.com
