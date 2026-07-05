@@ -1,20 +1,22 @@
-import { useState } from 'react';
-
-// Vite's import.meta.glob scans the gallery folder at build time.
-// Adding a new image to /public/images/gallery/ and rebuilding auto-includes it.
-const imageModules = import.meta.glob('/public/images/gallery/*.(jpg|jpeg|png|gif|webp|bmp)', {
-  eager: true,
-  query: '?url',
-  import: 'default'
-});
-
-const galleryImages = Object.entries(imageModules).map(([path], index) => ({
-  id: index + 1,
-  image: path.replace('/public', '')
-}));
+import { useState, useEffect } from 'react';
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState(null);
+  const [galleryImages, setGalleryImages] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch('/data/gallery.json')
+      .then(res => res.json())
+      .then(data => {
+        setGalleryImages(data);
+        setLoading(false);
+      })
+      .catch(err => {
+        console.error('Error loading gallery:', err);
+        setLoading(false);
+      });
+  }, []);
 
   return (
     <div className="max-w-7xl mx-auto px-6 py-16">
@@ -27,9 +29,12 @@ const Gallery = () => {
         </p>
       </div>
 
-      {/* Gallery Grid: 4 pictures per row */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        {galleryImages.length > 0 ? (
+        {loading ? (
+          <p className="col-span-full text-center text-gray-500 py-12">
+            Loading gallery...
+          </p>
+        ) : galleryImages.length > 0 ? (
           galleryImages.map((img, index) => (
             <div
               key={index}
@@ -52,7 +57,6 @@ const Gallery = () => {
         )}
       </div>
 
-      {/* Lightbox / Modal */}
       {selectedImage && (
         <div
           className="fixed inset-0 bg-black/90 backdrop-blur-md z-50 flex items-center justify-center p-4"
