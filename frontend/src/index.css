@@ -1,0 +1,375 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-electric-50: #e0f8ff;
+  --color-electric-500: #00bfff;
+  --color-electric-600: #00a8e0;
+  --color-electric-700: #0089b8;
+  
+  --color-silver-100: #f0f0f0;
+  --color-silver-200: #d1d1d1;
+  --color-silver-400: #a8a8a8;
+  --color-silver-500: #c0c0c0;
+  --color-silver-700: #666666;
+  
+  --color-darkbg-900: #0a0a0a;
+  --color-darkbg-800: #121212;
+  --color-darkbg-700: #1a1a1a;
+}
+
+/* Body base */
+body {
+  background-color: var(--color-silver-100);
+  color: #111827;
+  background-image: url("data:image/svg+xml,%3Csvg width='400' height='400' xmlns='http://www.w3.org/2000/svg'%3E%3Cg stroke='%238bbdeb' stroke-width='2' fill='none' opacity='0.3'%3E%3Cpath d='M -20 -20 l 150 150 v 200 m 40 -200 l -150 -150 M -20 50 l 120 120 v 300 M 50 -20 l 150 150 h 100 l 50 50 M 200 -20 v 100 l 100 100 v 250' /%3E%3Cpath d='M -20 200 l 100 100 h 80 l 50 50 v 100' /%3E%3Cpath d='M 420 200 l -100 100 v 150 M 420 50 l -150 150 v 150' /%3E%3Cpath d='M 0 350 h 60 l 60 -60 v -100 M 0 320 h 40 l 40 -40' /%3E%3Cpath d='M 280 420 v -150 l 80 -80 h 100 M 320 420 v -100 l 80 -80 v -100 M 150 420 v -50 l 50 -50' /%3E%3Ccircle cx='130' cy='130' r='4' fill='%238bbdeb'/%3E%3Ccircle cx='200' cy='80' r='4' fill='%238bbdeb'/%3E%3Ccircle cx='230' cy='250' r='4' fill='%238bbdeb'/%3E%3Ccircle cx='300' cy='80' r='4' fill='%238bbdeb'/%3E%3Ccircle cx='360' cy='300' r='4' fill='%238bbdeb'/%3E%3Ccircle cx='120' cy='190' r='4' fill='%238bbdeb'/%3E%3Ccircle cx='80' cy='280' r='4' fill='%238bbdeb'/%3E%3Ccircle cx='180' cy='370' r='4' fill='%238bbdeb'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 400px 400px;
+  background-attachment: fixed;
+}
+
+.dark body {
+  background-color: #0a0a0a;
+  color: #e5e7eb;
+  background-image: url("data:image/svg+xml,%3Csvg width='400' height='400' xmlns='http://www.w3.org/2000/svg'%3E%3Cg stroke='%2300bfff' stroke-width='2' fill='none' opacity='0.15'%3E%3Cpath d='M -20 -20 l 150 150 v 200 m 40 -200 l -150 -150 M -20 50 l 120 120 v 300 M 50 -20 l 150 150 h 100 l 50 50 M 200 -20 v 100 l 100 100 v 250' /%3E%3Cpath d='M -20 200 l 100 100 h 80 l 50 50 v 100' /%3E%3Cpath d='M 420 200 l -100 100 v 150 M 420 50 l -150 150 v 150' /%3E%3Cpath d='M 0 350 h 60 l 60 -60 v -100 M 0 320 h 40 l 40 -40' /%3E%3Cpath d='M 280 420 v -150 l 80 -80 h 100 M 320 420 v -100 l 80 -80 v -100 M 150 420 v -50 l 50 -50' /%3E%3Ccircle cx='130' cy='130' r='4' fill='%2300bfff'/%3E%3Ccircle cx='200' cy='80' r='4' fill='%2300bfff'/%3E%3Ccircle cx='230' cy='250' r='4' fill='%2300bfff'/%3E%3Ccircle cx='300' cy='80' r='4' fill='%2300bfff'/%3E%3Ccircle cx='360' cy='300' r='4' fill='%2300bfff'/%3E%3Ccircle cx='120' cy='190' r='4' fill='%2300bfff'/%3E%3Ccircle cx='80' cy='280' r='4' fill='%2300bfff'/%3E%3Ccircle cx='180' cy='370' r='4' fill='%2300bfff'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 400px 400px;
+  background-attachment: fixed;
+}
+
+/* Animation Keyframes */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes binary {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 30px 30px;
+  }
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(15px);
+    opacity: 0;
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(0, 191, 255, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(0, 191, 255, 0.6);
+  }
+}
+
+/* Animation Classes */
+.animate-fade-in {
+  animation: fade-in 1s ease-out;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float-slow 4s ease-in-out infinite;
+}
+
+.animate-binary {
+  animation: binary 20s linear infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 3s ease-in-out infinite;
+}
+
+.animate-scroll {
+  animation: scroll 1.5s ease-in-out infinite;
+}
+
+.animate-bounce {
+  animation: bounce 1s infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent, rgba(0, 191, 255, 0.1), transparent);
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+/* Animation Delays */
+.delay-100 {
+  animation-delay: 100ms;
+}
+
+.delay-200 {
+  animation-delay: 200ms;
+}
+
+.delay-300 {
+  animation-delay: 300ms;
+}
+
+.delay-400 {
+  animation-delay: 400ms;
+}
+
+.delay-500 {
+  animation-delay: 500ms;
+}
+
+.delay-600 {
+  animation-delay: 600ms;
+}
+
+.delay-700 {
+  animation-delay: 700ms;
+}
+
+.delay-800 {
+  animation-delay: 800ms;
+}
+
+.delay-900 {
+  animation-delay: 900ms;
+}
+
+.delay-1000 {
+  animation-delay: 1000ms;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-silver-200);
+  border-radius: 10px;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: var(--color-darkbg-800);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-electric-500);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-electric-600);
+}
+
+/* Selection Color */
+::selection {
+  background-color: var(--color-electric-500);
+  color: white;
+}
+
+::-moz-selection {
+  background-color: var(--color-electric-500);
+  color: white;
+}
+
+/* Smooth Transitions */
+* {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/* Custom Utility Classes */
+@utility container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@utility gradient-text {
+  background: linear-gradient(135deg, var(--color-electric-500), var(--color-electric-700));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* FIXED: Split card-hover into two separate utilities */
+@utility card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+/* Swiper Custom Styles */
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--color-electric-500) !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: var(--color-electric-500) !important;
+}
+
+.swiper-pagination-bullet {
+  background-color: var(--color-silver-400) !important;
+}
+
+.dark .swiper-pagination-bullet {
+  background-color: var(--color-silver-700) !important;
+}
+
+/* Loading Animation */
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid var(--color-silver-200);
+  border-top: 4px solid var(--color-electric-500);
+  border-radius: 50%;
+  animation: loading 1s linear infinite;
+}
+
+/* Glass Effect */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dark .glass {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Binary Background Effect */
+.binary-bg {
+  background-image: url("data:image/svg+xml,%3Csvg width='400' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Cstyle%3Etext %7B font-family: monospace; font-size: 14px; font-weight: bold; letter-spacing: 5px; %7D%3C/style%3E%3Ctext x='0' y='20' fill='%23000000' opacity='0.05'%3E0 1 1 0 0 1 0 1 1 0 1 0 1 1 0 0 0 1 1 0 1 0 0%3C/text%3E%3Ctext x='0' y='50' fill='%23000000' opacity='0.05'%3E1 0 0 1 0 0 1 1 0 1 0 0 1 1 1 0 0 0 1 1 0 1 0%3C/text%3E%3Ctext x='0' y='80' fill='%23000000' opacity='0.05'%3E0 1 1 0 1 1 0 1 1 0 1 0 1 1 0 0 0 1 1 0 1 0 1%3C/text%3E%3Ctext x='0' y='110' fill='%23000000' opacity='0.05'%3E1 0 0 1 0 0 1 1 0 1 0 1 1 1 1 0 0 0 1 1 0 1 0%3C/text%3E%3Ctext x='0' y='140' fill='%23000000' opacity='0.05'%3E0 1 0 0 0 1 0 1 1 0 1 0 1 1 0 0 0 1 1 0 1 0 0%3C/text%3E%3Ctext x='0' y='170' fill='%23000000' opacity='0.05'%3E1 1 0 1 0 0 1 1 0 1 0 0 1 1 1 0 0 0 1 1 0 1 0%3C/text%3E%3Ctext x='0' y='200' fill='%23000000' opacity='0.05'%3E0 1 1 0 0 1 0 1 1 0 1 0 1 1 0 0 0 1 1 0 1 0 0%3C/text%3E%3C/svg%3E");
+  background-repeat: repeat;
+}
+
+.dark .binary-bg {
+  background-image: url("data:image/svg+xml,%3Csvg width='400' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Cstyle%3Etext %7B font-family: monospace; font-size: 14px; font-weight: bold; letter-spacing: 5px; %7D%3C/style%3E%3Ctext x='0' y='20' fill='%23ffffff' opacity='0.03'%3E0 1 1 0 0 1 0 1 1 0 1 0 1 1 0 0 0 1 1 0 1 0 0%3C/text%3E%3Ctext x='0' y='50' fill='%23ffffff' opacity='0.03'%3E1 0 0 1 0 0 1 1 0 1 0 0 1 1 1 0 0 0 1 1 0 1 0%3C/text%3E%3Ctext x='0' y='80' fill='%23ffffff' opacity='0.03'%3E0 1 1 0 1 1 0 1 1 0 1 0 1 1 0 0 0 1 1 0 1 0 1%3C/text%3E%3Ctext x='0' y='110' fill='%23ffffff' opacity='0.03'%3E1 0 0 1 0 0 1 1 0 1 0 1 1 1 1 0 0 0 1 1 0 1 0%3C/text%3E%3Ctext x='0' y='140' fill='%23ffffff' opacity='0.03'%3E0 1 0 0 0 1 0 1 1 0 1 0 1 1 0 0 0 1 1 0 1 0 0%3C/text%3E%3Ctext x='0' y='170' fill='%23ffffff' opacity='0.03'%3E1 1 0 1 0 0 1 1 0 1 0 0 1 1 1 0 0 0 1 1 0 1 0%3C/text%3E%3Ctext x='0' y='200' fill='%23ffffff' opacity='0.03'%3E0 1 1 0 0 1 0 1 1 0 1 0 1 1 0 0 0 1 1 0 1 0 0%3C/text%3E%3C/svg%3E");
+}
+
+/* Circuit Line Animation */
+@keyframes draw-line {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-draw-line {
+  stroke-dasharray: 1000;
+  animation: draw-line 5s linear forwards;
+}
+
+@keyframes data-flow {
+  from {
+    stroke-dashoffset: 100;
+  }
+  to {
+    stroke-dashoffset: -100;
+  }
+}
+
+.animate-data-flow {
+  stroke-dasharray: 10 30;
+  animation: data-flow 1.5s linear infinite;
+}

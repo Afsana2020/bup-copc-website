@@ -1,0 +1,88 @@
+{
+  "2024-2025": [
+    {
+      "name": "Lecturer Rumana Yasmin",
+      "position": "Moderator",
+      "image": "/images/current%20panel/14.jpg",
+      "contact": "rumana.yasmin@bup.edu.bd"
+    },
+    {
+      "name": "Abu Sayed",
+      "position": "President",
+      "image": "/images/current%20panel/1.jpg",
+      "contact": "president@bup.edu.bd"
+    },
+    {
+      "name": "Zunayed Iqbal Sahed",
+      "position": "General Secretary",
+      "image": "/images/current%20panel/2.jpg",
+      "contact": "vp@bup.edu.bd"
+    },
+    {
+      "name": "Junaeid Shanto",
+      "position": "General Secretary",
+      "image": "/images/current%20panel/3.jpg",
+      "contact": "gs@bup.edu.bd"
+    },
+    {
+      "name": "Abid Rejwan",
+      "position": "Vice President (General)",
+      "image": "/images/current%20panel/4.jpg",
+      "contact": "treasurer@bup.edu.bd"
+    },
+    {
+      "name": "Afsana Hena",
+      "position": "Vice President (Technical)",
+      "image": "/images/current%20panel/5.jpg",
+      "contact": "afsanahena24@gmail.com"
+    },
+    {
+      "name": "Ajwad Mohtasim",
+      "position": "Joint Secretary (Competitive Programming)",
+      "image": "/images/current%20panel/6.jpg",
+      "contact": "corporate@bup.edu.bd"
+    },
+    {
+      "name": "Abdullah Yamin",
+      "position": "Joint Secretary (Event Management)",
+      "image": "/images/current%20panel/7.jpg",
+      "contact": "press@bup.edu.bd"
+    },
+    {
+      "name": "Rehnuma Salsabil Binte Obayed",
+      "position": "Joint Secretary (Graphics)",
+      "image": "/images/current%20panel/8.jpg",
+      "contact": "publications@bup.edu.bd"
+    },
+    {
+      "name": "Nuzhat Saima",
+      "position": "Joint Secretary (Graphics)",
+      "image": "/images/current%20panel/9.jpg",
+      "contact": "logistics@bup.edu.bd"
+    },
+    {
+      "name": "Abrar Ayan",
+      "position": "Joint Secretary (Public Relations)",
+      "image": "/images/current%20panel/10.jpg",
+      "contact": "it@bup.edu.bd"
+    },
+    {
+      "name": "Zarin Tasnim Rahman Tuly",
+      "position": "Joint Secretary (Media & Content)",
+      "image": "/images/current%20panel/11.jpg",
+      "contact": "cultural@bup.edu.bd"
+    },
+    {
+      "name": "Al Sadique Nuhin",
+      "position": "Treasurer",
+      "image": "/images/current%20panel/12.jpg",
+      "contact": "sports@bup.edu.bd"
+    },
+    {
+      "name": "Towfiq Omar Rakin",
+      "position": "Joint Secretary (Logistics)",
+      "image": "/images/current%20panel/13.jpg",
+      "contact": "member@bup.edu.bd"
+    }
+  ]
+}
